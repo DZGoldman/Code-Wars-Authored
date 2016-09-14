@@ -1,3 +1,19 @@
+/*
+https://www.codewars.com/kata/57bb798756449dea77000020
+Krazy King BlackJack is just like blackjack, with one difference: the kings!
+Instead of the kings being simply worth 10 points, kings are either either 10 points or some other number of points announced by the dealer at the start of the game. Whichever value yields the best hand is the one that plays  (much like how aces are worth either 1 or 11 points).
+
+Write a function that inputs a list of strings (representing a blackjack hand) and an integer that represents the alternative king value. The function should output an integer represting the value of the hand if it is less than or equal to 21, and False if it exceeds 21. Other than the alternative king value, normal blackjack rules apply.
+
+The cards, in order ace-through king, are represented as strings as follows:
+['A', '2', '3','4', '5', '6','7', '8', '9','10', 'J', 'Q','K']
+
+A hand has between 2 and 20 cards, inclusize. The alternative king value is between 2 and 9, inclusive.
+
+
+Blackjack rules: the value of a hand is determined by maximimizing the value of the sum of its cards while not exceeding 21 if possible. Number cards are worth their value, Jacks ('J') and Queens ('Q') are worth 10, Aces are worth either 1 or 11, and kings, again, are worth either 10 or their alternative value.
+*/
+
 function krazyKingBlackjack(hand, kingValue) {
   var score = 0;
   var aceFound = false;
@@ -48,12 +64,3 @@ function krazyKingBlackjack(hand, kingValue) {
   }
   return solution
 }
-
-console.log(krazyKingBlackjack(['A','A', '3'], 9));
-// Test.assertEquals( krazyKingBlackjack(['9', '9', 'K', 'A'], 3), False)
-// Test.assertEquals( krazyKingBlackjack(['K','K', 'K'], 7), 21)
-// Test.assertEquals( krazyKingBlackjack(['K','A', '4'], 6), 21)
-// Test.assertEquals( krazyKingBlackjack(['A', 'A', 'A', 'K'], 3), 16)
-// Test.assertEquals( krazyKingBlackjack(['A','A', 'A', 'K', '4'], 9), 17)
-// Test.assertEquals( krazyKingBlackjack(['K','K','K','K','K','K','K','K','K','K'], 2), 20)
-// Test.assertEquals( krazyKingBlackjack(['A','A','A','A','A','A','A','A'], 9), 18)
